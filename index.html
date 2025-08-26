@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arjun & Sneha - Wedding Invitation</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #5a5a5a;
+            background-color: #fefefe;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Animated Background Elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-heart {
+            position: absolute;
+            color: rgba(212, 175, 55, 0.6);
+            font-size: 1.5rem;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .floating-heart:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+            animation-duration: 8s;
+        }
+
+        .floating-heart:nth-child(2) {
+            top: 60%;
+            right: 15%;
+            animation-delay: 2s;
+            animation-duration: 7s;
+        }
+
+        .floating-heart:nth-child(3) {
+            top: 80%;
+            left: 20%;
+            animation-delay: 4s;
+            animation-duration: 9s;
+        }
+
+        .floating-heart:nth-child(4) {
+            top: 30%;
+            right: 25%;
+            animation-delay: 1s;
+            animation-duration: 6s;
+        }
+
+        .floating-heart:nth-child(5) {
+            top: 70%;
+            right: 35%;
+            animation-delay: 3s;
+            animation-duration: 8s;
+        }
+
+        .floating-heart:nth-child(6) {
+            top: 15%;
+            left: 70%;
+            animation-delay: 5s;
+            animation-duration: 7s;
+        }
+
+        .floating-petal {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.7), rgba(244, 228, 188, 0.4));
+            border-radius: 50% 0 50% 0;
+            animation: petal-fall 12s linear infinite;
+        }
+
+        .floating-petal:nth-child(7) {
+            left: 5%;
+            animation-delay: 0s;
+            animation-duration: 15s;
+        }
+
+        .floating-petal:nth-child(8) {
+            left: 25%;
+            animation-delay: 3s;
+            animation-duration: 12s;
+        }
+
+        .floating-petal:nth-child(9) {
+            left: 45%;
+            animation-delay: 6s;
+            animation-duration: 18s;
+        }
+
+        .floating-petal:nth-child(10) {
+            left: 65%;
+            animation-delay: 9s;
+            animation-duration: 14s;
+        }
+
+        .floating-petal:nth-child(11) {
+            left: 85%;
+            animation-delay: 12s;
+            animation-duration: 16s;
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(212, 175, 55, 0.8);
+            border-radius: 50%;
+            animation: sparkle 3s ease-in-out infinite;
+        }
+
+        .sparkle:nth-child(12) {
+            top: 25%;
+            left: 30%;
+            animation-delay: 0s;
+        }
+
+        .sparkle:nth-child(13) {
+            top: 45%;
+            right: 20%;
+            animation-delay: 1s;
+        }
+
+        .sparkle:nth-child(14) {
+            top: 65%;
+            left: 60%;
+            animation-delay: 2s;
+        }
+
+        .sparkle:nth-child(15) {
+            top: 35%;
+            left: 80%;
+            animation-delay: 0.5s;
+        }
+
+        .sparkle:nth-child(16) {
+            top: 75%;
+            left: 15%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0px) rotate(0deg);
+                opacity: 0.6;
+            }
+
+            25% {
+                transform: translateY(-20px) rotate(5deg);
+                opacity: 0.8;
+            }
+
+            50% {
+                transform: translateY(-10px) rotate(-3deg);
+                opacity: 0.7;
+            }
+
+            75% {
+                transform: translateY(-25px) rotate(8deg);
+                opacity: 0.9;
+            }
+        }
+
+        @keyframes petal-fall {
+            0% {
+                top: -10px;
+                transform: translateX(0px) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                top: 110vh;
+                transform: translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+        }
+
+        .couple-photo {
+            width: 280px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            border: 8px solid rgba(255, 255, 255, 0.9);
+        }
+
+        .couple-names {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: #8b7355;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .wedding-date {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            color: #a0956b;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 2px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: #a0956b;
+            font-size: 0.9rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: #8b7355;
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, #d4af37, #f4e4bc);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* Invitation Message Section */
+        .invitation {
+            background: linear-gradient(135deg, #faf8f3 0%, #f0ebe2 100%);
+        }
+
+        .invitation-message {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #6b6b6b;
+            font-weight: 300;
+        }
+
+        .invitation-message p {
+            margin-bottom: 25px;
+        }
+
+        .invitation-message .highlight {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            color: #8b7355;
+            font-size: 1.3rem;
+        }
+
+        /* Venue Section */
+        .venue {
+            background: #ffffff;
+        }
+
+        .venue-details {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .venue-name {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: #8b7355;
+            margin-bottom: 20px;
+        }
+
+        .venue-address {
+            font-size: 1.1rem;
+            color: #7a7a7a;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #d4af37, #f4e4bc);
+            color: #8b7355;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+            border: none;
+            cursor: pointer;
+            font-family: 'Lato', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(212, 175, 55, 0.4);
+            background: linear-gradient(135deg, #f4e4bc, #d4af37);
+        }
+
+        /* Calendar Section */
+        .calendar {
+            background: linear-gradient(135deg, #f5f1eb 0%, #e8ddd4 100%);
+        }
+
+        .calendar-content {
+            text-align: center;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .calendar-info {
+            font-size: 1.1rem;
+            color: #7a7a7a;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        /* Decorative Elements */
+        .decorative-border {
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #d4af37, transparent);
+            margin: 60px 0;
+        }
+
+        .heart {
+            color: #d4af37;
+            font-size: 1.5rem;
+            margin: 0 15px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .couple-photo {
+                width: 240px;
+                height: 300px;
+            }
+
+            .couple-names {
+                font-size: 2.8rem;
+            }
+
+            .wedding-date {
+                font-size: 1.2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .invitation-message {
+                font-size: 1.1rem;
+            }
+
+            .venue-name {
+                font-size: 1.7rem;
+            }
+
+            .container {
+                padding: 0 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .couple-photo {
+                width: 200px;
+                height: 250px;
+            }
+
+            .couple-names {
+                font-size: 2.2rem;
+            }
+
+            .wedding-date {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
+            .section-title {
+                font-size: 1.8rem;
+            }
+
+            .invitation-message {
+                font-size: 1rem;
+            }
+
+            .btn {
+                padding: 12px 25px;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth fade-in animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="floating-elements">
+            <!-- Floating Hearts -->
+            <div class="floating-heart">♥</div>
+            <div class="floating-heart">♥</div>
+            <div class="floating-heart">♥</div>
+            <div class="floating-heart">♥</div>
+            <div class="floating-heart">♥</div>
+            <div class="floating-heart">♥</div>
+
+            <!-- Falling Petals -->
+            <div class="floating-petal"></div>
+            <div class="floating-petal"></div>
+            <div class="floating-petal"></div>
+            <div class="floating-petal"></div>
+            <div class="floating-petal"></div>
+
+            <!-- Sparkles -->
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+            <div class="sparkle"></div>
+        </div>
+        <div class="hero-content">
+            <img src="public/couple.jpg" alt="Arjun & Sneha" class="couple-photo">
+            <h1 class="couple-names">Arjun <span class="heart">♥</span> Sneha</h1>
+            <p class="wedding-date">September 13th, 2025</p>
+        </div>
+    </section>
+
+    <!-- Invitation Message Section -->
+    <section class="section invitation" id="invitation">
+        <div class="container">
+            <h2 class="section-title fade-in">You're Invited</h2>
+            <div class="invitation-message fade-in">
+                <p class="highlight">With hearts full of joy and love,</p>
+                <p>We invite you to celebrate the beginning of our forever as we exchange vows and become husband and
+                    wife.</p>
+                <p>Your presence would make our special day complete as we embark on this beautiful journey together.
+                </p>
+                <p class="highlight">Join us for a day filled with love, laughter, and happily ever after.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="section venue" id="venue">
+        <div class="container">
+            <h2 class="section-title fade-in">Venue Details</h2>
+            <div class="venue-details fade-in">
+                <h3 class="venue-name">Vyapara Bhavan Auditorium</h3>
+                <div class="venue-address">
+                    Padiyottuchal<br>
+                    Kannur, Kerala<br>
+
+                </div>
+                <a href="#" class="btn" id="navigate-btn">Navigate to Venue</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calendar Section -->
+    <section class="section calendar" id="calendar">
+        <div class="container">
+            <h2 class="section-title fade-in">Save the Date</h2>
+            <div class="calendar-content fade-in">
+                <div class="calendar-info">
+                    <p>Don't forget to mark your calendar! Click the button below to add our wedding date to your
+                        calendar and never miss this special moment.</p>
+                </div>
+                <button class="btn" id="calendar-btn">Add to Calendar</button>
+            </div>
+        </div>
+    </section>
+
+    <div class="decorative-border"></div>
+
+    <script>
+        // Smooth scrolling and fade-in animations
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fade-in animation on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function (entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Navigate to venue functionality
+            document.getElementById('navigate-btn').addEventListener('click', function (e) {
+                e.preventDefault();
+                const googleMapsUrl = 'https://maps.app.goo.gl/X6VtZMxdsFjcMJGx8';
+                window.open(googleMapsUrl, '_blank');
+            });
+
+
+            // Add to calendar functionality
+            document.getElementById('calendar-btn').addEventListener('click', function () {
+                // Create calendar event details
+                const eventDetails = {
+                    title: 'Arjun & Sneha Wedding',
+                    start: '20250913T065000Z', // September 13, 2025, 12:20 PM IST (converted to UTC)
+                    end: '20250913T080000Z',   // September 13, 2025, 1:30 PM IST (converted to UTC)
+                    description: 'Join us for the wedding celebration of Arjun and Sneha',
+                    location: 'https://maps.app.goo.gl/X6VtZMxdsFjcMJGx8'
+                };
+
+
+
+                // Create Google Calendar URL
+                const googleCalendarUrl = `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(eventDetails.title)}&dates=${eventDetails.start}/${eventDetails.end}&details=${encodeURIComponent(eventDetails.description)}&location=${encodeURIComponent(eventDetails.location)}`;
+
+                // Open Google Calendar
+                window.open(googleCalendarUrl, '_blank');
+            });
+
+            // Smooth scroll for any internal links (if added later)
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+
+        // Add some interactive hover effects
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(button => {
+                button.addEventListener('mouseenter', function () {
+                    this.style.transform = 'translateY(-3px) scale(1.05)';
+                });
+
+                button.addEventListener('mouseleave', function () {
+                    this.style.transform = 'translateY(0) scale(1)';
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
